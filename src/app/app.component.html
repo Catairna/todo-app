@@ -1,8 +1,11 @@
-<H1>My to-do app</H1>
+<H1>Things to do</H1>
 <mat-sidenav-container>
   <mat-sidenav position="end" mode="side" opened
-    >Sidenav<button>Button</button></mat-sidenav
+    >Sidenav<button mat-button (click)="openDialog()">
+      Open a new modal
+    </button></mat-sidenav
   >
+
   <mat-sidenav-content class="content">Content</mat-sidenav-content>
 </mat-sidenav-container>
 
