@@ -1,1 +1,16 @@
-<p>form-dialog works!</p>
+<form class="orange-border" [formGroup]="taskForm">
+  <!--(ngSubmit)="handleSubmit()"-->
+
+  <label>
+    Headline <br />
+    <input type="text" formControlName="headline" />
+  </label>
+  <br />
+  <label>
+    Description <br />
+    <textarea formControlName="description"></textarea>
+  </label>
+  <br />
+  <button type="submit">Save task</button>
+  <button mat-button (click)="closeDialog()">Cancel</button>
+</form>

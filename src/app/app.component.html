@@ -1,12 +1,16 @@
 <H1>Things to do</H1>
 <mat-sidenav-container>
-  <mat-sidenav position="end" mode="side" opened
+  <mat-sidenav position="start" mode="side" opened
     >Sidenav<button mat-button (click)="openDialog()">
-      Open a new modal
+      Add a new task
     </button></mat-sidenav
   >
 
-  <mat-sidenav-content class="content">Content</mat-sidenav-content>
+  <mat-sidenav-content class="content"
+    >Content
+    <!--h2>{{ taskForm.value.headline }}</h2>
+    <p>{{ taskForm.value.description }}</p-->
+  </mat-sidenav-content>
 </mat-sidenav-container>
 
 <router-outlet></router-outlet>

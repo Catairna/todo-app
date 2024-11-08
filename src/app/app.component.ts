@@ -14,6 +14,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
 })
 export class AppComponent {
   title = 'todo-app';
+
   constructor(private dialog: MatDialog) {}
 
   openDialog(): void {
