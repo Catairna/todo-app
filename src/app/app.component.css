@@ -1,3 +1,8 @@
 .content {
   background-color: #88ffff;
+  height: 500px;
+}
+
+.task-complete {
+  text-decoration: line-through;
 }

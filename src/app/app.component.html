@@ -1,15 +1,25 @@
 <H1>Things to do</H1>
 <mat-sidenav-container>
-  <mat-sidenav position="start" mode="side" opened
-    >Sidenav<button mat-button (click)="openDialog()">
+  <mat-sidenav class="orange-border" position="start" mode="side" opened>
+    <ul>
+      <li *ngFor="let task of tasks">
+        {{ task }}
+      </li>
+    </ul>
+    <button mat-button (click)="openDialog()">
       Add a new task
     </button></mat-sidenav
   >
 
-  <mat-sidenav-content class="content"
-    >Content
-    <!--h2>{{ taskForm.value.headline }}</h2>
-    <p>{{ taskForm.value.description }}</p-->
+  <mat-sidenav-content class="content">
+    <div>
+      <h2>Task headline</h2>
+      <p>Task description</p>
+      <button>Mark as done</button>
+      <button>Remove task</button>
+      <!--h2>{{ taskForm.value.headline }}</h2>
+      <p>{{ taskForm.value.description }}</p-->
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

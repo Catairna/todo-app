@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-form-dialog',
@@ -11,7 +16,7 @@ import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
 })
 export class FormDialogComponent {
   taskForm = new FormGroup({
-    headline: new FormControl(''),
+    headline: new FormControl('', Validators.required),
     description: new FormControl(''),
   });
   /*handleSubmit() {
