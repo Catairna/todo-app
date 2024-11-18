@@ -1,14 +1,12 @@
-<form class="orange-border" [formGroup]="taskForm">
-  <!--(ngSubmit)="handleSubmit()"-->
-
-  <label>
+<form class="orange-border" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <label for="headline">
     Headline <br />
-    <input type="text" formControlName="headline" />
+    <input id="headline" type="text" formControlName="headline" />
   </label>
   <br />
-  <label>
+  <label for="description">
     Description <br />
-    <textarea formControlName="description"></textarea>
+    <textarea id="description" formControlName="description"></textarea>
   </label>
   <br />
   <button type="submit">Save task</button>

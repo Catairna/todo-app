@@ -14,14 +14,19 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
 })
 export class AppComponent {
   title = 'todo-app';
-  tasks = ['Practice coding', 'Exercise'];
+  tasks: { headline: string; description: string }[] = [];
 
   constructor(private dialog: MatDialog) {}
 
   openDialog(): void {
-    this.dialog.open(FormDialogComponent, {
+    const dialogRef = this.dialog.open(FormDialogComponent, {
       width: '250px',
       data: {},
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.tasks.push(result);
+      }
     });
   }
 }

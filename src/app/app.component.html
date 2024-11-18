@@ -3,7 +3,7 @@
   <mat-sidenav class="orange-border" position="start" mode="side" opened>
     <ul>
       <li *ngFor="let task of tasks">
-        {{ task }}
+        {{ task.headline }}
       </li>
     </ul>
     <button mat-button (click)="openDialog()">

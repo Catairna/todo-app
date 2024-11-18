@@ -19,12 +19,14 @@ export class FormDialogComponent {
     headline: new FormControl('', Validators.required),
     description: new FormControl(''),
   });
-  /*handleSubmit() {
-    alert(
-      this.taskForm.value.headline + ' | ' + this.taskForm.value.description
-    );
-  }*/
+
   constructor(private dialogRef: MatDialogRef<FormDialogComponent>) {}
+
+  onSubmit(): void {
+    if (this.taskForm.valid) {
+      this.dialogRef.close(this.taskForm.value);
+    }
+  }
 
   closeDialog(): void {
     this.dialogRef.close();
