@@ -15,6 +15,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
 export class AppComponent {
   title = 'todo-app';
   tasks: { headline: string; description: string }[] = [];
+  selectedTask: { headline: string; description: string } | null = null;
 
   constructor(private dialog: MatDialog) {}
 
@@ -28,5 +29,8 @@ export class AppComponent {
         this.tasks.push(result);
       }
     });
+  }
+  onSelect(task: { headline: string; description: string }): void {
+    this.selectedTask = task;
   }
 }

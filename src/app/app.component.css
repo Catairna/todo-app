@@ -1,6 +1,7 @@
 .content {
   background-color: #88ffff;
   height: 500px;
+  padding: 50px;
 }
 
 .task-complete {
