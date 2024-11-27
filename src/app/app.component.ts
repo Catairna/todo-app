@@ -14,7 +14,7 @@ import { FormDialogComponent } from './form-dialog/form-dialog.component';
 })
 export class AppComponent {
   title = 'todo-app';
-  tasks: { headline: string; description: string }[] = [];
+  tasks: { headline: string; description: string; isComplete: false }[] = [];
   selectedTask: { headline: string; description: string } | null = null;
 
   constructor(private dialog: MatDialog) {}
@@ -30,7 +30,23 @@ export class AppComponent {
       }
     });
   }
-  onSelect(task: { headline: string; description: string }): void {
+  onSelect(task: {
+    headline: string;
+    description: string;
+    isComplete: boolean;
+  }): void {
     this.selectedTask = task;
+  }
+  toggleTaskState(task: {
+    headline: string;
+    description: string;
+    isComplete: boolean;
+  }): void {
+    //this.task.isComplete = !this.task.isComplete;
+    console.log('Task state changed');
+    console.log(task);
+  }
+  removeTask() {
+    console.log('Task removed');
   }
 }
