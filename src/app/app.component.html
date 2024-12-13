@@ -15,7 +15,8 @@
     <div *ngIf="selectedTask">
       <h2>{{ selectedTask.headline }}</h2>
       <p>{{ selectedTask.description }}</p>
-      <button *ngFor="let task of tasks" (click)="toggleTaskState(task)">
+      <button (click)="toggleTaskState(selectedTask)">
+        <!--katso aiheuttaako ngfor bugin-->
         Mark as done
       </button>
       <button (click)="removeTask()">Remove task</button>
