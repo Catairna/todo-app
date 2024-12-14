@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { FormDialogComponent } from './form-dialog/form-dialog.component';
+import { TmplAstBlockNode } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -41,6 +42,8 @@ export class AppComponent {
   }): void {
     this.selectedTask = task;
   }
+  taskStateButtonText = 'Mark as done / undone';
+
   toggleTaskState(task: {
     headline: string;
     description: string;
@@ -50,6 +53,7 @@ export class AppComponent {
     console.log('Task state changed');
     console.log(task);
   }
+
   removeTask() {
     console.log('Task removed');
   }
