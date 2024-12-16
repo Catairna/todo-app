@@ -28,7 +28,7 @@ export class FormDialogComponent {
     }
   }
 
-  closeDialog(): void {
+  onCancel(): void {
     this.dialogRef.close();
   }
 }
